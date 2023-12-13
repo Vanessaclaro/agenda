@@ -21,7 +21,7 @@ Menu:
 def cadastrarContato():
    idContato=input("Escolha o id do contato")
    nome=input("Escreva o nome do contato. ")
-   telefoneinput("Digite o número do contato. ")
+   telefone=input("Digite o número do contato. ")
    return print(f'Cadastrar um contato: ') 
 def deletarContato():
    print("Deletar contato:")
