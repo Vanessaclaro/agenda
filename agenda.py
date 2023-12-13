@@ -20,6 +20,8 @@ Menu:
       buscarContatoPeloId()
 def cadastrarContato():
    idContato=input("Escolha o id do contato")
+   nome=input("Escreva o nome do contato. ")
+   telefone=input("Digite o número do contato. ")
    return print(f'Cadastrar um contato: ') 
 def deletarContato():
    print("Deletar contato:")
