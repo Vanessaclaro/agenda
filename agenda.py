@@ -1,3 +1,5 @@
+listaContato=[]
+
 def menu():
    opcao=input('''
 ====================================
@@ -19,12 +21,16 @@ Menu:
    else:
       buscarContatoPeloId()
 def cadastrarContato():
-   idContato=input("Escolha o id do contato")
    nome=input("Escreva o nome do contato. ")
    email=input("Digite o email do contato. ")
    telefone=input("Digite o número do contato. ")
    endereco=input("Digite o endereço do contato. ")
-   return print(f'Cadastrar um contato: ') 
+   try:
+      agenda=open("agenda.txt","a")
+      dados=f'{nome};{email};{telefone};{endereco}'
+   except:
+      print("Erro ao cadastrar contato.")
+
 def deletarContato():
    print("Deletar contato:")
 def buscarContatoPeloId():
