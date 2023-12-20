@@ -48,6 +48,15 @@ def cadastrarContato():
 def deletarContato():
    nomeDeletar = input("Digite o nome do contato que pretende excluir: ")
    agenda = open("agenda.txt","r")
+   aux = []
+   aux2 = []
+   for i in agenda:
+      aux.append(i)
+   for i in range(0, len(aux)):
+      if nomeDeletar not in aux[i]:
+         aux2.append(aux[i])
+   agenda = open("agenda.txt", "w")
+   agenda.write
 
    print("Deletar contato:::")
 def buscarContato():
