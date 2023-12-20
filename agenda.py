@@ -56,7 +56,7 @@ def deletarContato():
       if nomeDeletar not in aux[i]:
          aux2.append(aux[i])
    agenda = open("agenda.txt", "w")
-   agenda.write
+   agenda.write(i)
 
    print("Deletar contato:::")
 def buscarContato():
