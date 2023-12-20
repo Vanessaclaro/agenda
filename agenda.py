@@ -58,7 +58,7 @@ def deletarContato():
    agenda = open("agenda.txt", "w")
    for i in aux2:
       agenda.write(i)
-   print("Contato deletado com sucesso!")
+   print("Contato deletado com sucesso!!")
 
 def buscarContato():
    print("Buscar contato pelo id:")
