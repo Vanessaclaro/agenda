@@ -46,7 +46,10 @@ def cadastrarContato():
       print("Erro ao cadastrar contato.")
 
 def deletarContato():
-   print("Deletar contato:")
+   nomeDeletar = input("Digite o nome do contato que pretende excluir: ")
+   agenda = open("agenda.txt","r")
+
+   print("Deletar contato:::")
 def buscarContato():
    print("Buscar contato pelo id:")
 def tarefas():
