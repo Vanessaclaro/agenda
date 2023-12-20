@@ -7,10 +7,10 @@ def menu():
 Menu:
 [1]Cadastrar contato
 [2]Deletar contato
-[3]Buscar contato pelo id
+[3]Buscar contato 
 [4]Tarefas
-[5]Compromissos
-[6]Deletar tarefas
+[5]Deletar tarefas              
+[6]Compromissos
 [7]Deletar Compromissos
 =====================================
     Escolha uma opção acima.''')
@@ -18,8 +18,19 @@ Menu:
       cadastrarContato()
    elif opcao=="2":
       deletarContato()
+   elif opcao=="3":
+      buscarContato()
+   elif opcao=="4":
+      tarefas()
+   elif opcao=="5":
+      deletarTarefas()
+   elif opcao=="6":
+      compromissos()
+   elif opcao=="7":
+      deletarCompromissos()
    else:
-      buscarContatoPeloId()
+      print("Opção errada!")
+
 def cadastrarContato():
    nome=input("Escreva o nome do contato. ")
    email=input("Digite o email do contato. ")
@@ -27,15 +38,26 @@ def cadastrarContato():
    endereco=input("Digite o endereço do contato. ")
    try:
       agenda=open("agenda.txt","a")
-      dados=f'{nome};{email};{telefone};{endereco}'
+      dados=f'{nome};{email};{telefone};{endereco}\n'
+      agenda.write(dados)
+      agenda.close()
+      print(f'Contato gravado com sucesso!')
    except:
       print("Erro ao cadastrar contato.")
 
 def deletarContato():
    print("Deletar contato:")
-def buscarContatoPeloId():
+def buscarContato():
    print("Buscar contato pelo id:")
-  
+def tarefas():
+   print("Anotar tarefas. ")
+def deletarTarefas():
+   print("Excluir tarefas!")  
+def compromissos():
+   print("Anotar Compromissos. ")
+def deletarCompromissos():
+   print("Apagar compromissos!")
+
 def main():
    menu()
 main()
