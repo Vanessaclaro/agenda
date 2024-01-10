@@ -16,6 +16,21 @@ Menu:
     Escolha uma opção acima.''')
    if opcao=="1":
       cadastrarContato()
+
+      opcao2=input('''
+      =========================================
+                  Agenda Pessoal
+      Menu:
+      [1] Deletar contato
+      [2] Editar Contato
+      [3] Mostrar Contato
+      =========================================
+         Escolha uma opção acima: ''')
+      if opcao2 == "1":
+         deletarcontato()
+      print("Você deletou o contato.")
+
+         
    elif opcao=="2":
       deletarContato()
    elif opcao=="3":
@@ -63,6 +78,19 @@ def deletarContato():
 def buscarContato():
    print("Buscar contato pelo id:")
 def tarefas():
+   descricao=input("Escreva a descrição da tarefa: ")
+   data_Inicial=input("Digite a data de inicio: ")
+   horario_Inicial=input("Digite o horário de inicio: ")
+   data_Final=input("Digite a data de término: ")
+   horario_Final=input("Digite o horário de término:")
+   try:
+      agenda=open("tarefa.txt","a")
+      dados=f'{descricao};{data_Inicial};{horario_Inicial};{data_Final};{horario_Final}\n'
+      tarefa.write(dados)
+      tarefa.close()
+      print(f'Tarefa gravada com sucesso!')
+   except:
+      print("Erro ao cadastrar contato.")
    print("Anotar tarefas. ")
 def deletarTarefas():
    print("Excluir tarefas!")  
@@ -72,5 +100,6 @@ def deletarCompromissos():
    print("Apagar compromissos!")
 
 def main():
-   menu()
+   while True:
+      menu()
 main()
