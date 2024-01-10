@@ -1,4 +1,4 @@
 
 from agenda import cadastrarContato
-def cadastrarContato():
+def test_cadastrarContato():
  

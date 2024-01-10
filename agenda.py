@@ -13,7 +13,7 @@ Menu:
 [6]Compromissos
 [7]Deletar Compromissos
 =====================================
-    Escolha uma opção acima.''')
+    Escolha uma opção acima.''')   
    if opcao=="1":
       cadastrarContato()
    elif opcao=="2":
@@ -67,10 +67,15 @@ def tarefas():
 def deletarTarefas():
    print("Excluir tarefas!")  
 def compromissos():
+   descricao=input("Descreva seu compromisso! ")
+   horario=input("Digite o horário. ")
+   data=input("Digite a data. ")
+   local=input("Digite o local do seu compromisso! ")
    print("Anotar Compromissos. ")
 def deletarCompromissos():
    print("Apagar compromissos!")
 
 def main():
-   menu()
+   while True:
+    menu()
 main()

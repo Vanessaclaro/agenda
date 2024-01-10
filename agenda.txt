@@ -1,1 +1,4 @@
-Vanessa;van@.gmail.com;89 999769900;Rua Arlindo n 38
+Luana;lufeitosa@gmail.com;89 999456788;Av Senador Helvidio Nunes n 90
+jp lima;yahoo;999;rua
+maria;hotmail;888;city
+Pedro;ph@gmail.com;8999003388;Rua João 
