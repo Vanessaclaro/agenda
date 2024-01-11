@@ -84,7 +84,7 @@ def tarefas():
    data_Final=input("Digite a data de término: ")
    horario_Final=input("Digite o horário de término:")
    try:
-      agenda=open("tarefa.txt","a")
+      tarefa=open("tarefa.txt","a")
       dados=f'{descricao};{data_Inicial};{horario_Inicial};{data_Final};{horario_Final}\n'
       tarefa.write(dados)
       tarefa.close()
