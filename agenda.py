@@ -15,22 +15,7 @@ Menu:
 =====================================
     Escolha uma opção acima.''')
    if opcao=="1":
-      cadastrarContato()
-
-      opcao2=input('''
-      =========================================
-                  Agenda Pessoal
-      Menu:
-      [1] Deletar contato
-      [2] Editar Contato
-      [3] Mostrar Contato
-      =========================================
-         Escolha uma opção acima: ''')
-      if opcao2 == "1":
-         deletarcontato()
-      print("Você deletou o contato.")
-
-         
+      cadastrarContato()   
    elif opcao=="2":
       deletarContato()
    elif opcao=="3":
