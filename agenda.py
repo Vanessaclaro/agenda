@@ -78,7 +78,19 @@ def tarefas():
       print("Erro ao cadastrar contato.")
    print("Anotar tarefas. ")
 def deletarTarefas():
-   print("Excluir tarefas!")  
+   tarefaDeletar = input("Digite qual tarefa pretende excluir: ")
+   tarefa = open("tarefa.txt","r")
+   lista = []
+   lista2 = []
+   for i in tarefa:
+      lista.append(i)
+   for i in range(0, len(lista)):
+      if tarefaDeletar not in lista[i]:
+         lista2.append(lista[i])
+   tarefa = open("tarefa.txt", "w")
+   for i in lista2:
+      tarefa.write(i)
+   print("Tarefa excluída com sucesso!")  
 def compromissos():
    print("Anotar Compromissos. ")
 def deletarCompromissos():
