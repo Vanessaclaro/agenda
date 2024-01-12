@@ -109,9 +109,19 @@ def compromissos():
    except:
       print("Erro ao cadastrar compromisso.")
 def deletarCompromissos():
-   
-   print("Apagar compromissos!")
-
+   compromissosDeletar = input("Digite qual compromisso pretende excluir: ")
+   compromissos = open("compromissos.txt","r")
+   lista = []
+   lista2 = []
+   for i in compromissos:
+      lista.append(i)
+   for i in range(0, len(lista)):
+      if compromissosDeletar not in lista[i]:
+         lista2.append(lista[i])
+   compromissos = open("compromissos.txt", "w")
+   for i in lista2:
+      compromissos.write(i)
+   print("Compromisso excluído com sucesso!")  
 def main():
    while True:
       menu()
