@@ -109,6 +109,7 @@ def compromissos():
    except:
       print("Erro ao cadastrar compromisso.")
 def deletarCompromissos():
+   
    print("Apagar compromissos!")
 
 def main():
