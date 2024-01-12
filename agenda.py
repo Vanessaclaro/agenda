@@ -61,7 +61,12 @@ def deletarContato():
    print("Contato deletado com sucesso!!")
 
 def buscarContato():
-   print("Buscar contato pelo id:")
+   nome=input(f'Digite o nome do contato: ').upper()
+   agenda=open("agenda.txt","r")
+   for contato in agenda:
+      if nome in contato.split(";")[0].upper():
+         print(contato)
+   agenda.close()
 def tarefas():
    descricao=input("Escreva a descrição da tarefa: ")
    data_Inicial=input("Digite a data de inicio: ")
@@ -75,8 +80,7 @@ def tarefas():
       tarefa.close()
       print(f'Tarefa gravada com sucesso!')
    except:
-      print("Erro ao cadastrar contato.")
-   print("Anotar tarefas. ")
+      print("Erro ao cadastrar taferas.")
 def deletarTarefas():
    tarefaDeletar = input("Digite qual tarefa pretende excluir: ")
    tarefa = open("tarefa.txt","r")
@@ -92,7 +96,18 @@ def deletarTarefas():
       tarefa.write(i)
    print("Tarefa excluída com sucesso!")  
 def compromissos():
-   print("Anotar Compromissos. ")
+   descricao=input("Escreva a descrição de seu compromisso: ")
+   data=input("Digite a data: ")
+   horario=input("Digite o horário: ")
+   local=input("Digite o local: ")
+   try:
+      compromissos=open("compromissos.txt","a")
+      dados=f'{descricao};{data};{horario};{local}\n'
+      compromissos.write(dados)
+      compromissos.close()
+      print(f'Compromisso gravado com sucesso!')
+   except:
+      print("Erro ao cadastrar compromisso.")
 def deletarCompromissos():
    print("Apagar compromissos!")
 
