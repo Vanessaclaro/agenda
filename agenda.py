@@ -8,12 +8,14 @@ Menu:
 [1]Cadastrar contato
 [2]Deletar contato
 [3]Buscar contato 
-[4]Tarefas
-[5]Deletar tarefas              
-[6]Compromissos
-[7]Deletar Compromissos
+[4]Cadastrar Tarefas
+[5]Deletar tarefas 
+[6]Buscar Tarefas             
+[7]Cadastrar Compromissos
+[8]Deletar Compromissos
+[9]Buscar Compromissos
 =====================================
-    Escolha uma opção acima.''')
+    Escolha uma opção acima. ''')
    if opcao=="1":
       cadastrarContato()   
    elif opcao=="2":
@@ -21,13 +23,17 @@ Menu:
    elif opcao=="3":
       buscarContato()
    elif opcao=="4":
-      tarefas()
+      cadastrarTarefas()
    elif opcao=="5":
       deletarTarefas()
    elif opcao=="6":
-      compromissos()
+      buscarTarefas()
    elif opcao=="7":
+      cadastrarCompromissos()
+   elif opcao=="8":
       deletarCompromissos()
+   elif opcao=="9":
+      buscarCompromissos()
    else:
       print("Opção errada!")
 
@@ -67,7 +73,7 @@ def buscarContato():
       if nome in contato.split(";")[0].upper():
          print(contato)
    agenda.close()
-def tarefas():
+def cadastrarTarefas():
    descricao=input("Escreva a descrição da tarefa: ")
    data_Inicial=input("Digite a data de inicio: ")
    horario_Inicial=input("Digite o horário de inicio: ")
@@ -94,8 +100,15 @@ def deletarTarefas():
    tarefa = open("tarefa.txt", "w")
    for i in lista2:
       tarefa.write(i)
-   print("Tarefa excluída com sucesso!")  
-def compromissos():
+   print("Tarefa excluída com sucesso!") 
+def buscarTarefas():
+   nome=input(f'Digite o nome da tarefa: ').upper()
+   tarefa=open("tarefa.txt","r")
+   for taf in tarefa:
+      if nome in taf.split(";")[0].upper():
+         print(taf)
+   tarefa.close()
+def cadastrarCompromissos():
    descricao=input("Escreva a descrição de seu compromisso: ")
    data=input("Digite a data: ")
    horario=input("Digite o horário: ")
@@ -121,7 +134,15 @@ def deletarCompromissos():
    compromissos = open("compromissos.txt", "w")
    for i in lista2:
       compromissos.write(i)
-   print("Compromisso excluído com sucesso!")  
+   print("Compromisso excluído com sucesso!") 
+def buscarCompromissos():
+   nome=input(f'Digite o nome do seu compromisso: ').upper()
+   compromissos=open("compromissos.txt","r")
+   for compr in compromissos:
+      if nome in compr.split(";")[0].upper():
+         print(compr)
+   compromissos.close()
+
 def main():
    while True:
       menu()
