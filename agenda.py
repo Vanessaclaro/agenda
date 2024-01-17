@@ -8,12 +8,15 @@ Menu:
 [1]Cadastrar contato
 [2]Deletar contato
 [3]Buscar contato 
-[4]Cadastrar Tarefas
-[5]Deletar tarefas 
-[6]Buscar Tarefas             
-[7]Cadastrar Compromissos
-[8]Deletar Compromissos
-[9]Buscar Compromissos
+[4]Editar contato             
+[5]Cadastrar Tarefas
+[6]Deletar tarefas 
+[7]Buscar Tarefas
+[8]Editar Tarefas            
+[9]Cadastrar Compromissos
+[10]Deletar Compromissos
+[11]Buscar Compromissos
+[12]Editar Compromisso
 =====================================
     Escolha uma opção acima. ''')
    if opcao=="1":
@@ -23,17 +26,23 @@ Menu:
    elif opcao=="3":
       buscarContato()
    elif opcao=="4":
-      cadastrarTarefas()
+      editarContato()
    elif opcao=="5":
-      deletarTarefas()
+      cadastrarTarefas()
    elif opcao=="6":
-      buscarTarefas()
+      deletarTarefas()
    elif opcao=="7":
-      cadastrarCompromissos()
+      buscarTarefas()
    elif opcao=="8":
-      deletarCompromissos()
+      editarTarefas()
    elif opcao=="9":
+      cadastrarCompromissos()
+   elif opcao=="10":
+      deletarCompromissos()
+   elif opcao=="11":
       buscarCompromissos()
+   elif opcao=="12":
+      editarCompromisso()
    else:
       print("Opção errada!")
 
@@ -73,6 +82,23 @@ def buscarContato():
       if nome in contato.split(";")[0].upper():
          print(contato)
    agenda.close()
+def editarContato():
+    nomeEditar = input("Digite o nome do contato que pretende editar: ")
+    agenda = open("agenda.txt", "r")
+    aux = []
+    for i in agenda:
+        aux.append(i)
+    for i in range(len(aux)):
+        if nomeEditar in aux[i]:
+            novo_nome = input("Digite o novo nome: ")
+            novo_email = input("Digite o novo email: ")
+            novo_telefone = input("Digite o novo número de telefone: ")
+            novo_endereco = input("Digite o novo endereço: ")
+            aux[i] = f"{novo_nome};{novo_email};{novo_telefone};{novo_endereco}\n"
+            print("Contato editado com sucesso!")
+    agenda = open("agenda.txt", "w")
+    for i in aux:
+        agenda.write(i)
 def cadastrarTarefas():
    descricao=input("Escreva a descrição da tarefa: ")
    data_Inicial=input("Digite a data de inicio: ")
@@ -108,6 +134,24 @@ def buscarTarefas():
       if nome in taf.split(";")[0].upper():
          print(taf)
    tarefa.close()
+def editarTarefas():
+    nomeEditar = input("Digite a tarefa que pretende editar: ")
+    tarefa = open("tarefa.txt", "r")
+    aux = []
+    for i in tarefa:
+        aux.append(i)
+    for i in range(len(aux)):
+        if nomeEditar in aux[i]:
+            descricao=input("Escreva a descrição da tarefa: ")
+            data_Inicial=input("Digite a data de inicio: ")
+            horario_Inicial=input("Digite o horário de inicio: ")
+            data_Final=input("Digite a data de término: ")
+            horario_Final=input("Digite o horário de término:")
+            aux[i] = f"{descricao};{data_Inicial};{horario_Inicial};{data_Final};{horario_Final}\n"
+            print("Tarefa editada com sucesso!")
+    tarfa = open("tarefa.txt", "w")
+    for i in aux:
+     tarefa.write(i)
 def cadastrarCompromissos():
    descricao=input("Escreva a descrição de seu compromisso: ")
    data=input("Digite a data: ")
@@ -136,12 +180,29 @@ def deletarCompromissos():
       compromissos.write(i)
    print("Compromisso excluído com sucesso!") 
 def buscarCompromissos():
-   nome=input(f'Digite o nome do seu compromisso: ').upper()
+   nome=input(f'Digite o nome do seu compromisso que deseja buscar: ').upper()
    compromissos=open("compromissos.txt","r")
    for compr in compromissos:
       if nome in compr.split(";")[0].upper():
          print(compr)
    compromissos.close()
+def editarCompromisso():
+    nomeEditar = input("Digite o compromisso que deseja editar: ")
+    compromissos = open("compromissos.txt", "r")
+    aux = []
+    for i in compromissos:
+        aux.append(i)
+    for i in range(len(aux)):
+        if nomeEditar in aux[i]:
+            descricao=input("Escreva a descrição de seu novo compromisso: ")
+            data=input("Digite a data: ")
+            horario=input("Digite o horário: ")
+            local=input("Digite o local: ")
+            aux[i] = f"{descricao};{data};{horario};{local}\n"
+            print("Compromisso editado com sucesso!")
+    compromissos = open("compromissos.txt", "w")
+    for i in aux:
+     compromissos.write(i)
 
 def main():
    while True:
