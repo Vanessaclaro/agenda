@@ -98,7 +98,7 @@ def editarContato():
             print("Contato editado com sucesso!")
     agenda = open("agenda.txt", "w")
     for i in aux:
-        agenda.write(i)
+      agenda.write(i)
 def cadastrarTarefas():
    descricao=input("Escreva a descrição da tarefa: ")
    data_Inicial=input("Digite a data de inicio: ")
