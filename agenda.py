@@ -149,7 +149,7 @@ def editarTarefas():
             horario_Final=input("Digite o horário de término:")
             aux[i] = f"{descricao};{data_Inicial};{horario_Inicial};{data_Final};{horario_Final}\n"
             print("Tarefa editada com sucesso!")
-    tarfa = open("tarefa.txt", "w")
+    tarefa = open("tarefa.txt", "w")
     for i in aux:
      tarefa.write(i)
 def cadastrarCompromissos():
