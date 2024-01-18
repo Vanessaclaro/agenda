@@ -83,21 +83,21 @@ def buscarContato():
          print(contato)
    agenda.close()
 def editarContato():
-    nomeEditar = input("Digite o nome do contato que pretende editar: ")
-    agenda = open("agenda.txt", "r")
-    aux = []
-    for i in agenda:
+   nomeEditar = input("Digite o nome do contato que pretende editar: ").upper()
+   agenda = open("agenda.txt", "r")
+   aux = []
+   for i in agenda:
         aux.append(i)
-    for i in range(len(aux)):
-        if nomeEditar in aux[i]:
+   for i in range(len(aux)):
+        if nomeEditar in aux[i].upper():
             novo_nome = input("Digite o novo nome: ")
             novo_email = input("Digite o novo email: ")
             novo_telefone = input("Digite o novo número de telefone: ")
             novo_endereco = input("Digite o novo endereço: ")
             aux[i] = f"{novo_nome};{novo_email};{novo_telefone};{novo_endereco}\n"
             print("Contato editado com sucesso!")
-    agenda = open("agenda.txt", "w")
-    for i in aux:
+   agenda = open("agenda.txt", "w")
+   for i in aux:
       agenda.write(i)
 def cadastrarTarefas():
    descricao=input("Escreva a descrição da tarefa: ")

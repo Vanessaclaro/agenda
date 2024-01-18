@@ -2,3 +2,4 @@ Valéria;va@gmail.com;89 99349878;Rua Vicente n 375
 Vanessa;van@hotmail.com;89 99459845;Av Santos dumont n38
 Feitosa;fei@gmail.com;899999999;Av Getulio Vargas
 Vanessa;van@gmail.com;89 9999440;Rua lirio n 38
+valeria;va@gmail.com;890000445;rua tia 23
